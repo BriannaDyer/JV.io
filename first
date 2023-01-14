@@ -1,0 +1,35 @@
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.util.Scanner;
+
+public class CircleDemo {
+	
+	public static void main(String[] args) 
+	{
+	    String currentDirectory = System.getProperty("user.dir");
+	    System.out.println("Working Directory " + currentDirectory);
+	    LocalDateTime now = LocalDateTime.now();
+	    DateTimeFormatter dtf = DateTimeFormatter.ofPattern("MM-dd-yyyy @ hh:mm");
+	    System.out.println("Programmer: " + System.getProperty("user.name"));
+	    System.out.println("Lab 19.4: " + dtf.format(now));
+	    System.out.println();
+	    
+	    
+	      double radiusOfCircle ; 		    
+	   
+   	    Scanner input = new Scanner(System.in);
+	    
+	  	    System.out.print("Enter the radius of a circle: ");
+	    radiusOfCircle = input.nextDouble();
+	    
+	    
+	     input.close();
+	   
+		    Circle circle = new Circle(radiusOfCircle);
+
+	    	    System.out.printf("The circle's area is %.2f%n"
+	    		+ "The circle's diameter is %.2f%n"
+	    		+ "The circle's circumference is %.2f%n",
+	    		circle.getArea(),circle.getDiameter(), circle.getCircumference());
+}
+}
